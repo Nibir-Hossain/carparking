@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <span>Car Parking</span>
+
+    <div class="spacer"></div>
+   
+    <a mat-raised-button color = "accent" [routerLink]="['']" routerLinkActive="active" style="margin:5px;">Home</a>
+    <!-- <a mat-flat-button [routerLink]="['admin']" routerLinkActive="active" style="margin:5px;">Admin</a>
+    <a mat-raised-button [routerLink]="['gateman']" routerLinkActive="active" style="margin:5px;">Gateman</a> -->
+
+  </mat-toolbar>
+
+  <div class="tab">
+    <button class="tablinks" [routerLink]="['gateman']" routerLinkActive="active" style="margin:5px;">GATEMAN</button>
+    <button class="tablinks" [routerLink]="['admin']" routerLinkActive="active" style="margin:5px;">ADMIN</button>
+    
+</div>

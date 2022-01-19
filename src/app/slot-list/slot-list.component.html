@@ -1,0 +1,21 @@
+<table border="1px">
+    <caption>Slot List</caption>
+  
+    <tr>
+      <!-- <th>Id.</th> -->
+      <th>SLot No</th>
+      <th>Rate Per Hour</th>
+     </tr>
+     <tr *ngFor="let slt of slotList ">
+        <!-- <td>{{slt.id}}</td> -->
+        <td>{{slt.slotnumber}}</td>
+        <td>{{slt.slotrate}}</td>    <td>
+          <button [routerLink]="[ '/Edit',slt.id]" routerLinkActive="active">Eidt</button>
+          <!-- <button [routerLink]="[ '/Edit',slt.id]" routerLinkActive="active">Delete</button>| -->
+    
+        </td>
+
+ 
+      </tr>
+
+    </table>

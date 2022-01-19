@@ -1,0 +1,39 @@
+.topnav {
+    overflow: hidden;
+    background-color: #b6ce76;
+    height: 64px;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 22px 32px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold
+}
+.tab {
+    float: middle;
+    
+    text-align: center;
+    background-color: rgb(251, 250, 250);
+    
+}
+
+.slottable {
+    float: middle;
+    
+    text-align: center;
+   
+    
+}
+
+/* .tabcontent {
+    float: middle;
+    padding: 0px 0px;
+    border-bottom: 1px solid #ccc;
+    width: 88%;
+    border-left: none;
+    min-height: 300px;
+} */

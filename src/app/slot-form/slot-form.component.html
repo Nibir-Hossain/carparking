@@ -1,0 +1,17 @@
+<br><br><br><br>
+
+<div class = slotform>
+<form class = "form-style" [formGroup] = "form"></form>
+
+<div class = "box">
+    <label for= "Slot No">Enter Slot No:</label>
+    <input type = "text" placeholder="Enter Slot No" id="slotnumber" #Slotenumber /><br>
+    <br>
+
+    <label for= "rate">Enter Rate Per Hour</label>
+    <input type = "text" placeholder="Rate Per Hour" id="slotrate" #Ratehour /><br>
+    <br>
+    <button class="button" (click)="onSavedData(Slotenumber.value,Ratehour.value)">Saved</button>
+</div>
+</div>
+
