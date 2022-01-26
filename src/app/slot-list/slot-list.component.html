@@ -1,21 +1,33 @@
-<table border="1px">
-    <caption>Slot List</caption>
-  
-    <tr>
-      <!-- <th>Id.</th> -->
-      <th>SLot No</th>
-      <th>Rate Per Hour</th>
-     </tr>
-     <tr *ngFor="let slt of slotList ">
-        <!-- <td>{{slt.id}}</td> -->
-        <td>{{slt.slotnumber}}</td>
-        <td>{{slt.slotrate}}</td>    <td>
-          <button [routerLink]="[ '/Edit',slt.id]" routerLinkActive="active">Eidt</button>
-          <!-- <button [routerLink]="[ '/Edit',slt.id]" routerLinkActive="active">Delete</button>| -->
-    
-        </td>
 
+  <br><br>
+
+  <!-- <div class="container">
+    <div class="block">1 fuck</div>
+    <div class="block">2. Fuck you</div>
+    <div class="block">3. name of the company</div>
+    <div class="block">4. name of the company</div>
+    <div class="block">5. name of the company</div>
+    <div class="block">6. name of the company</div>
+    <div class="block">7. name of the company</div>
+    <div class="block">8. name of the company</div>
+  </div> -->
  
-      </tr>
 
-    </table>
+  <div class = "container">
+    <div *ngFor = "let slot of slotList">
+      <div class = "block">
+      <div>
+        Slot Id : {{slot.slotnumber}}
+      </div>
+      <br>
+      <div>
+        Rate Per Hour : {{slot.slotrate}}
+      </div>
+      <br>
+      <div class="btn">
+      <button style="margin:5px;" [routerLink]="[ '/Edit',slot.slotnumber]" routerLinkActive="active">Edit</button>
+      <button >Delete</button>
+    </div>
+    </div>
+    </div>
+  </div>

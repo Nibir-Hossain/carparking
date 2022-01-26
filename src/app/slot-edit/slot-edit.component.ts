@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-slot-edit',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlotEditComponent implements OnInit {
 
-  constructor() { }
+  slotList : any = [];
+
+  constructor(
+    private route : ActivatedRoute
+   
+  ) { }
+
+ 
+
+
+  
+  
 
   ngOnInit(): void {
+ 
+  }
+  
+
+  onUpdate(){
+
   }
 
 }

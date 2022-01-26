@@ -1,0 +1,17 @@
+.container {
+    height: 500px;
+    width: 60%;
+    background: #EEE;
+    margin: 10px auto;
+    position: relative;
+}
+.block {
+    background: rgb(9, 230, 218);
+   
+    font-weight: 600;
+    text-align: left;
+    padding: 50px;
+    float: left;
+    margin: 30px;
+    
+}

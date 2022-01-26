@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 
 @Component({
@@ -9,37 +9,53 @@ import { Router } from '@angular/router';
   styleUrls: ['./slot-form.component.css']
 })
 export class SlotFormComponent implements OnInit {
+  [x: string]: any;
+
+  slots : any [] = [];
 
   constructor(
     private fb: FormBuilder,
-    private router : Router
+    private router : Router,
+    private route : ActivatedRoute
   ) { }
+
+  IsEdit : boolean = false;
 
   form = new FormGroup({});
 
   ngOnInit(): void {
+
+    // console.log(this.route.snapshot.params['id'])
+    if(this.route.snapshot.params['id']){
+      this.IsEdit = true;
+       let slots = localStorage.getItem('slots')
+       if(slots) this.slots = JSON.parse(slots)
+      
+      // let allslots = JSON.parse(slots || '')
+      // allslots.forEach((slot : any)=>{
+      
+      // })
+   
+      
+    }
+
+
   }
   onSavedData(slotnumber: any, slotrate: any)
   {
-      let a = 0;
-      for(let i = 0; i < localStorage.length; i++)
-      {
-        let key = localStorage.key(i);
-        if (Number(key)>a)
-        {
-          a = Number(key);
-        }
-      }
-
-     a = Number(a) + 1;
-
-      console.log(localStorage);
+  
 
       let slot = {
-        id: a, slotnumber: slotnumber, slotrate: slotrate
+       slotnumber: slotnumber, slotrate: slotrate
       };
-      localStorage.setItem(slot.id.toString(), JSON.stringify(slot));
-      
+
+      let slots = localStorage.getItem('slots')
+      if(slots) this.slots = JSON.parse(slots)
+      this.slots.push(slot)
+      localStorage.setItem('slots' , JSON.stringify(this.slots));
+
+      // localStorage.setItem(slot.id.toString(), JSON.stringify(slot));
+
       this.router.navigate(['','admin'])
   }
 

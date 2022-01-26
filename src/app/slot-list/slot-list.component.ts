@@ -12,16 +12,20 @@ export class SlotListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(localStorage)
 
-    for (let i = 0; i < localStorage.length; i++)
-    {
-      let key : any = localStorage.key(i);
-      let value : any = localStorage.getItem(key);
+    let slots = localStorage.getItem('slots')
+    if(slots) this.slotList = JSON.parse(slots)
 
-      this.slotList.push(JSON.parse(value));
-      console.log(key, value, this.slotList)
-    }
+    // console.log(localStorage)
+
+    // for (let i = 0; i < localStorage.length; i++)
+    // {
+    //   let key : any = localStorage.key(i);
+    //   let value : any = localStorage.getItem(key);
+
+    //   this.slotList.push(JSON.parse(value));
+    //   console.log(key, value, this.slotList)
+    // }
 
   }
 
