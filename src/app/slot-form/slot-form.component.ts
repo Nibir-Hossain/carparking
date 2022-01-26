@@ -43,18 +43,22 @@ export class SlotFormComponent implements OnInit {
   }
   onSavedData(slotnumber: any, slotrate: any)
   {
-  
-
       let slot = {
        slotnumber: slotnumber, slotrate: slotrate
       };
 
-      let slots = localStorage.getItem('slots')
-      if(slots) this.slots = JSON.parse(slots)
-      this.slots.push(slot)
-      localStorage.setItem('slots' , JSON.stringify(this.slots));
+      let temp = localStorage.getItem('slots');
+      if(temp) this.slots = JSON.parse(temp);
 
-      // localStorage.setItem(slot.id.toString(), JSON.stringify(slot));
+      for(let item of this.slots) {
+        if(item.slotnumber==slotnumber) {
+          console.log('Slot with same slotnumber already exist!');
+          return;
+        }
+      }
+      
+      this.slots.push(slot);
+      localStorage.setItem('slots' , JSON.stringify(this.slots));
 
       this.router.navigate(['','admin'])
   }
